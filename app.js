@@ -1,4 +1,5 @@
 const timerText = document.getElementById("timerText");
+var ringtone = new Audio('ringtone.mp3');
 
 var length = 0;
 var currentTimeMinutes = 25;
@@ -41,6 +42,12 @@ function customTime() {
 
 
 function runTimer() {
+	if (isCustomising == true) {
+		const inpVal = document.getElementById('timerInput').value;
+		customTime();
+		setTime(inpVal);
+	}
+
 	if (running == false && length != 0) {
 		document.getElementById("timerText").innerHTML = length - 1 + ":59";
 		running = true;
@@ -75,6 +82,7 @@ function runTimer() {
 			if (distance < 0) {
 				clearInterval(x);
 				document.getElementById("timerText").innerHTML = "DONE!";
+				ringtone.play();
 			}
 		}, 1000);
 	}
