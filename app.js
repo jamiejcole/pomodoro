@@ -21,7 +21,6 @@ function setTime(time) {
 
 function customTime() {
 	if (isCustomising == false && running == false) {
-		console.log('false - 1st time');
 		document.getElementById("timerText").style.display = "none";
 		document.getElementById("timerInput").style.display = "inline-block";
 		document.getElementById("buttonHolder").style.paddingTop = "58px";
@@ -31,7 +30,6 @@ function customTime() {
 		isCustomising = true;
 	}
 	else if (isCustomising == true && running == false) {
-		console.log('true - 2nd time');
 		document.getElementById("timerText").style.display = "block";
 		document.getElementById("timerInput").style.display = "none";
 		document.getElementById("buttonHolder").style.paddingTop = "0px";
