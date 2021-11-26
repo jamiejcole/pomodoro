@@ -23,6 +23,7 @@ function customTime() {
 	if (isCustomising == false && running == false) {
 		document.getElementById("timerText").style.display = "none";
 		document.getElementById("timerInput").style.display = "inline-block";
+		document.getElementById("timerInput").focus();
 		document.getElementById("buttonHolder").style.paddingTop = "58px";
 		document.getElementById("buttonHolder").style.marginTop = "-30px";
 		length = 0;
