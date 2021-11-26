@@ -13,7 +13,7 @@ function setTime(time) {
 }
 
 function runTimer() {
-	if (running == false) {
+	if (running == false && length != 0) {
 		document.getElementById("timerText").innerHTML = length - 1 + ":59";
 		running = true;
 		var countDownDate = new Date();
