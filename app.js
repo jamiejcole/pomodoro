@@ -4,13 +4,42 @@ var length = 0;
 var currentTimeMinutes = 25;
 var currentTimeSecs = 0;
 var running = false;
+var isCustomising = false;
 
 function setTime(time) {
-	if (running == false) {
-		length = time;
-		document.getElementById("timerText").innerHTML = time + ":00";
+	try { 
+		var timeInt = parseInt(time)
+		if (running == false) {
+			length = timeInt;
+			document.getElementById("timerText").innerHTML = time + ":00";
+		}
+		if (isCustomising == true) { customTime(); }
+	}
+	catch (error) { console.error(error); }
+	
+}
+
+function customTime() {
+	if (isCustomising == false && running == false) {
+		console.log('false - 1st time');
+		document.getElementById("timerText").style.display = "none";
+		document.getElementById("timerInput").style.display = "inline-block";
+		document.getElementById("buttonHolder").style.paddingTop = "58px";
+		document.getElementById("buttonHolder").style.marginTop = "-30px";
+		length = 0;
+		document.getElementById("timerText").innerHTML = "00:00";
+		isCustomising = true;
+	}
+	else if (isCustomising == true && running == false) {
+		console.log('true - 2nd time');
+		document.getElementById("timerText").style.display = "block";
+		document.getElementById("timerInput").style.display = "none";
+		document.getElementById("buttonHolder").style.paddingTop = "0px";
+		document.getElementById("buttonHolder").style.marginTop = "-30px";
+		isCustomising = false;
 	}
 }
+
 
 function runTimer() {
 	if (running == false && length != 0) {

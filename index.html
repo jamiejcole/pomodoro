@@ -16,14 +16,32 @@
             <button onClick="setTime(25)">25m</button>
             <button onClick="setTime(5)">5m</button>
             <button onClick="setTime(10)">10m</button>
-            <button>Custom</button>
+            <button onclick="customTime()">Custom</button>
         </div>
         <div id="timer">
             <h1 id="timerText">00:00</h1>
+            <input style="display: none;" type="text" placeholder="00:00" id="timerInput" name="timerInput" autocomplete="off">
         </div>
         <div id="buttonHolder">
             <button onClick="runTimer()" class="learn-more">START</button>
         </div>
     </div>
+
+    <script>
+        const timerInputField = document.getElementById('timerInput');
+        timerInputField.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                validate(e);
+            }
+        });
+
+        function validate(e) {
+            const text = e.target.value;
+            console.log("return registed, " + text);
+            customTime();
+            setTime(text);
+            runTimer();
+        }
+    </script>
 </body>
 </html>
