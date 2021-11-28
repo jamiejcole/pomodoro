@@ -77,6 +77,7 @@ function runTimer() {
 			else if (secondLength == 1) {
 				document.getElementById("timerText").innerHTML = minutes + ":0" + seconds;
 			}
+			document.title = "Pomodoro | " + minutes + ":" + seconds;
 
 			// If the count down is finished, write some text
 			if (distance < 0) {
