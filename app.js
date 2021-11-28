@@ -73,16 +73,18 @@ function runTimer() {
 			secondLength = seconds.toString().length;
 			if (secondLength >= 2) {
 				document.getElementById("timerText").innerHTML = minutes + ":" + seconds;
+				document.title = "Pomodoro | " + minutes + ":" + seconds;
 			}
 			else if (secondLength == 1) {
 				document.getElementById("timerText").innerHTML = minutes + ":0" + seconds;
+				document.title = "Pomodoro | " + minutes + ":0" + seconds;
 			}
-			document.title = "Pomodoro | " + minutes + ":" + seconds;
 
 			// If the count down is finished, write some text
 			if (distance < 0) {
 				clearInterval(x);
 				document.getElementById("timerText").innerHTML = "DONE!";
+				document.title = "Pomodoro | Done!";
 				ringtone.play();
 			}
 		}, 1000);
