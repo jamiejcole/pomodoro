@@ -16,6 +16,16 @@ body {
     margin-top: 100px;
 }
 
+#dataText1 {
+    text-align: center;
+    margin-top: 430px;
+}
+
+#dataText2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
 #root {
     width: 425px;
     position: absolute;
@@ -94,6 +104,7 @@ body {
     /* margin-top: -20px; /* -20 originally, 60 for editing */
     z-index: -1;
 }
+
 
 
 

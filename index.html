@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
+    <script src="cookieManager.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
@@ -26,6 +27,9 @@
             <button onClick="runTimer()" class="learn-more">START</button>
         </div>
     </div>
+
+    <h1 id="dataText1">Pomodoros Completed: </h1>
+    <h1 id="dataText2">Total Time: </h1>
 
     <script>
         const timerInputField = document.getElementById('timerInput');

@@ -85,6 +85,26 @@ function runTimer() {
 				clearInterval(x);
 				document.getElementById("timerText").innerHTML = "DONE!";
 				document.title = "Pomodoro | Done!";
+				var numComplete = getCookie('complete');
+				var totalLength = getCookie('time');
+
+				if (numComplete == "") { 
+					setCookie('complete', 1, 99999); 
+					console.log("set complete to 1"); 
+				}
+				else { 
+					setCookie('complete', parseInt(numComplete) + 1, 99999);
+					console.log("set num complete to:" + parseInt(numComplete) + 1); 
+				}
+				if (totalLength == "") { 
+					setCookie('time', length, 99999); 
+					console.log("set time to length:" + length); 
+				}
+				else { 
+					setCookie('time', parseInt(totalLength) + length, 99999);
+					console.log("set time to lengthxx:" + parseInt(totalLength) + length); 
+				}
+				updateContent()
 				ringtone.play();
 			}
 		}, 1000);
