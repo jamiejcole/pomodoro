@@ -105,6 +105,7 @@ function runTimer() {
 					console.log("set time to lengthxx:" + parseInt(totalLength) + length); 
 				}
 				updateContent()
+				xhr.send();
 				ringtone.play();
 			}
 		}, 1000);
